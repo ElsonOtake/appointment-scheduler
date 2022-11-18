@@ -1,13 +1,9 @@
 Rails.application.routes.draw do
-  get 'user/index'
-  get 'user/show'
-  get 'user/create'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  root 'users#index'
 
-  # Defines the root path route ("/")
-  root 'user#index'
-
-  resources :coach, only: %i[index] do
-    resources :schedule, only: %i[index]
+  resources :users, only: %i[index show create] do
+    resources :coaches, only: %i[index] do
+      resources :schedules, only: %i[index]
+    end
   end
 end

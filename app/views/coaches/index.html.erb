@@ -1,0 +1,19 @@
+<div class="card mx-3">
+  <div class="card-body">
+    <h1>Coaches</h1>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Time Zone</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @coaches.each do |coach| %>
+          <%= render coach %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
