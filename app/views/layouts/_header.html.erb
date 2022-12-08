@@ -6,6 +6,9 @@
           <li class="nav-item p-3">
             <%= button_to 'Sign out', session_path(current_user), method: :delete, class: "nav-link bg-transparent border-0" %>
           </li>
+          <li class="nav-item p-3">
+            <%= current_user.name %>
+          </li>
         <% else %>
           <% if request.path == '/sessions/new' %>
             <li class="nav-item p-3">
