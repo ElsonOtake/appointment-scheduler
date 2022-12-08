@@ -1,18 +1,30 @@
 <div class="card mx-3">
   <div class="card-body">
-    <h1>Schedule</h1>
-
+    <h1><%= @coach.name %> - Schedule</h1>
+    <% table_max_rows = [@sunday.size, @monday.size, @tuesday.size, @wednesday.size, @thursday.size, @friday.size, @saturday.size].max %>
     <table class="table table-striped">
       <thead>
         <tr>
-          <th scope="col">Day of week</th>
-          <th scope="col">Booking time</th>
-          <th scope="col"></th>
+          <th>Sunday</th>
+          <th>Monday</th>
+          <th>Tuesday</th>
+          <th>Wednesday</th>
+          <th>Thursday</th>
+          <th>Friday</th>
+          <th>Saturday</th>
         </tr>
       </thead>
       <tbody>
-        <% @schedules.each do |schedule| %>
-          <%= render schedule %>
+        <% (0..table_max_rows - 1).each do |row| %>
+          <tr>
+            <td><%= row < @sunday.size ? @sunday[row].booking_time.strftime('%H:%M') : '' %></td>
+            <td><%= row < @monday.size ? @monday[row].booking_time.strftime('%H:%M') : '' %></td>
+            <td><%= row < @tuesday.size ? @tuesday[row].booking_time.strftime('%H:%M') : '' %></td>
+            <td><%= row < @wednesday.size ? @wednesday[row].booking_time.strftime('%H:%M') : '' %></td>
+            <td><%= row < @thursday.size ? @thursday[row].booking_time.strftime('%H:%M') : '' %></td>
+            <td><%= row < @friday.size ? @friday[row].booking_time.strftime('%H:%M') : '' %></td>
+            <td><%= row < @saturday.size ? @saturday[row].booking_time.strftime('%H:%M') : '' %></td>
+          </tr>
         <% end %>
       </tbody>
     </table>
