@@ -10,7 +10,7 @@ RSpec.describe Schedule, type: :model do
     expect(@schedule).to be_valid
   end
 
-  it 'is not valid without a day_of_week' do
+  it 'has @coach.id as coach_id' do
     expect(@schedule.coach_id).to eq(@coach.id)
   end
 
