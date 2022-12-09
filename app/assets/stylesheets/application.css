@@ -14,14 +14,14 @@
  *= require_self
  */
 
- .navbar-nav {
+.navbar-nav {
   display: flex;
   width: 100%;
   padding-right: 1rem;
   justify-content: space-between;
   align-items: center;
- }
+}
 
- .table {
+.table {
   width: 100%;
- }
+}
