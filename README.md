@@ -118,7 +118,7 @@ using GitHub CLI:
 Install this project with:
 ```sh
   bundle install
-  rails db:create db:migrate
+  rails db:create db:migrate db:seed
 ```
 
 ### Usage
