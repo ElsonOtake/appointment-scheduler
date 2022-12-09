@@ -31,3 +31,4 @@ csv.each do |row|
     booking += 60 * 30
   end
 end
+User.create(name: 'Elson')
