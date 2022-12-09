@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
   resources :users, only: %i[new create] do
     resources :coaches, only: %i[index] do
-      resources :schedules, only: %i[index]
+      resources :schedules, only: %i[index] do
+        post :booking
+      end
     end
   end
 end
