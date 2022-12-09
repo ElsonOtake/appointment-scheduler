@@ -1,6 +1,4 @@
 class SessionsController < ApplicationController
-  def new; end
-
   def create
     session_params = params.permit(:name)
     @user = User.find_by(name: session_params[:name])
