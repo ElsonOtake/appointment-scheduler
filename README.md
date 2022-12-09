@@ -75,7 +75,7 @@ This was a take-home interview project for a company. It was **timboxed to 4 hou
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link]()
+- [Live Demo Link](https://appointment-scheduler.onrender.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
