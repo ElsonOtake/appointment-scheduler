@@ -31,4 +31,4 @@ csv.each do |row|
     booking += 60 * 30
   end
 end
-Client.create(name: 'Luna')
+Client.create(name: 'Elson')
