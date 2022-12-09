@@ -1,0 +1,32 @@
+<div class="card mx-3">
+  <div class="card-body">
+    <h1><%= @coach.name %> - Schedule</h1>
+    <% table_max_rows = [@sunday.size, @monday.size, @tuesday.size, @wednesday.size, @thursday.size, @friday.size, @saturday.size].max %>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Sunday</th>
+          <th>Monday</th>
+          <th>Tuesday</th>
+          <th>Wednesday</th>
+          <th>Thursday</th>
+          <th>Friday</th>
+          <th>Saturday</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% (0..table_max_rows - 1).each do |row| %>
+          <tr>
+            <%= render 'schedule', row: row, dow: @sunday[row], size: @sunday.size %>
+            <%= render 'schedule', row: row, dow: @monday[row], size: @monday.size %>
+            <%= render 'schedule', row: row, dow: @tuesday[row], size: @tuesday.size %>
+            <%= render 'schedule', row: row, dow: @wednesday[row], size: @wednesday.size %>
+            <%= render 'schedule', row: row, dow: @thursday[row], size: @thursday.size %>
+            <%= render 'schedule', row: row, dow: @friday[row], size: @friday.size %>
+            <%= render 'schedule', row: row, dow: @saturday[row], size: @saturday.size %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
