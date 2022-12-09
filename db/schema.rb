@@ -24,7 +24,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_18_175106) do
   create_table "schedules", force: :cascade do |t|
     t.string "day_of_week"
     t.time "booking_time"
-    t.string "booking_user"
+    t.integer "booking_user"
     t.bigint "coach_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
