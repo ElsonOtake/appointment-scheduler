@@ -1,5 +1,9 @@
-<tr>
-  <td><%= schedule.day_of_week %></td>
-  <td><%= schedule.booking_time %></td>
-  <td><%= button_to 'Schedule', class: "btn btn-secondary btn-sm" %></td>
-</tr>
+<% if row < size %>
+  <% if dow.booking_user.nil? %>
+    <td><%= button_to dow.booking_time.strftime('%H:%M'), user_coach_schedule_booking_path(@user, @coach, dow.id), class: "btn btn-secondary btn-sm" %></td>
+  <% else %>
+    <td><%= button_to User.find(dow.booking_user).name, class: "btn btn-secondary btn-sm" %></td>
+  <% end %>
+<% else %>
+  <td></td>
+<% end %>
