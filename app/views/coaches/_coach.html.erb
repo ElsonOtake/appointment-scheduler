@@ -1,5 +1,5 @@
 <tr>
   <td><%= coach.name %></td>
   <td><%= coach.timezone %></td>
-  <td><%= button_to 'Schedule', user_coach_schedules_path(@user.id, coach.id), method: :get, class: "btn btn-secondary btn-sm" %></td>
+  <td><%= button_to 'Schedule', client_coach_schedules_path(@client.id, coach.id), method: :get, class: "btn btn-secondary btn-sm" %></td>
 </tr>

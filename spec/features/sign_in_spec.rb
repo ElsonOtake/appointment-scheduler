@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Sign in page', type: :feature do
-  describe 'without user logged in' do
+  describe 'without client logged in' do
     it 'will present sign in page' do
       visit '/sessions/new'
       expect(current_path).to eq(new_session_path)

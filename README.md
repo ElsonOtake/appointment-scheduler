@@ -32,13 +32,13 @@ This was a take-home interview project for a company. It was **timboxed to 4 hou
 
 **Input:**
 
-- "Given a [CSV dataset](./lib/seeds/coaches.csv) that contains the active coaches and their weekly schedule of their available hours, Output the following User Stories:"
+- "Given a [CSV dataset](./lib/seeds/coaches.csv) that contains the active coaches and their weekly schedule of their available hours, Output the following Client Stories:"
          
 **Output:**
         
-- As a User, I want to see which coaches I can schedule with.
-- As a User, I want to see what 30 minute timeslots are available to schedule with a particular coach.
-- As a User, I want to book an appointment with a coach at one of their available times.
+- As a Client, I want to see which coaches I can schedule with.
+- As a Client, I want to see what 30 minute timeslots are available to schedule with a particular coach.
+- As a Client, I want to book an appointment with a coach at one of their available times.
             
 **Anti-Requirements:**
 

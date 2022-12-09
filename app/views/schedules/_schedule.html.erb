@@ -1,8 +1,8 @@
 <% if row < array_size %>
-  <% if schedule.booking_user.nil? %>
-    <td><%= button_to schedule.booking_time.strftime('%H:%M'), user_coach_schedule_booking_path(@user, @coach, schedule.id), class: "btn btn-secondary btn-sm" %></td>
+  <% if schedule.booking_client.nil? %>
+    <td><%= button_to schedule.booking_time.strftime('%H:%M'), client_coach_schedule_booking_path(@client, @coach, schedule.id), class: "btn btn-secondary btn-sm" %></td>
   <% else %>
-    <td><%= button_to User.find(schedule.booking_user).name, class: "btn btn-secondary btn-sm" %></td>
+    <td><%= button_to Client.find(schedule.booking_client).name, class: "btn btn-secondary btn-sm" %></td>
   <% end %>
 <% else %>
   <td></td>

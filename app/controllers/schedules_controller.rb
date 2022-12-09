@@ -1,6 +1,6 @@
 class SchedulesController < ApplicationController
   def index
-    @user = User.find(params[:user_id])
+    @client = Client.find(params[:client_id])
     @coach = Coach.find(params[:coach_id])
     @schedules = @coach.schedules
     @sunday = @coach.schedules.where(day_of_week: 'Sunday').order('booking_time')
@@ -13,10 +13,10 @@ class SchedulesController < ApplicationController
   end
 
   def booking
-    @user = User.find(params[:user_id])
+    @client = Client.find(params[:client_id])
     @coach = Coach.find(params[:coach_id])
     @schedule = Schedule.find(params[:schedule_id])
-    @schedule.booking_user = @user.id
+    @schedule.booking_client = @client.id
     respond_to do |format|
       format.html do
         if @schedule.save
@@ -24,7 +24,7 @@ class SchedulesController < ApplicationController
         else
           flash.now[:error] = 'Error: Booking could not be saved'
         end
-        redirect_to user_coach_schedules_path(@user.id, @coach.id)
+        redirect_to client_coach_schedules_path(@client.id, @coach.id)
       end
     end
   end
