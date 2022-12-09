@@ -17,13 +17,13 @@
       <tbody>
         <% (0..table_max_rows - 1).each do |row| %>
           <tr>
-            <%= render 'schedule', row: row, dow: @sunday[row], size: @sunday.size %>
-            <%= render 'schedule', row: row, dow: @monday[row], size: @monday.size %>
-            <%= render 'schedule', row: row, dow: @tuesday[row], size: @tuesday.size %>
-            <%= render 'schedule', row: row, dow: @wednesday[row], size: @wednesday.size %>
-            <%= render 'schedule', row: row, dow: @thursday[row], size: @thursday.size %>
-            <%= render 'schedule', row: row, dow: @friday[row], size: @friday.size %>
-            <%= render 'schedule', row: row, dow: @saturday[row], size: @saturday.size %>
+            <%= render 'schedule', row: row, schedule: @sunday[row], array_size: @sunday.size %>
+            <%= render 'schedule', row: row, schedule: @monday[row], array_size: @monday.size %>
+            <%= render 'schedule', row: row, schedule: @tuesday[row], array_size: @tuesday.size %>
+            <%= render 'schedule', row: row, schedule: @wednesday[row], array_size: @wednesday.size %>
+            <%= render 'schedule', row: row, schedule: @thursday[row], array_size: @thursday.size %>
+            <%= render 'schedule', row: row, schedule: @friday[row], array_size: @friday.size %>
+            <%= render 'schedule', row: row, schedule: @saturday[row], array_size: @saturday.size %>
           </tr>
         <% end %>
       </tbody>
