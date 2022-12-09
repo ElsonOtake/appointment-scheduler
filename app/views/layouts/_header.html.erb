@@ -4,15 +4,15 @@
       <ul class="navbar-nav">
         <% if logged_in? %>
           <li class="nav-item p-3">
-            <%= button_to 'Sign out', session_path(current_user), method: :delete, class: "nav-link bg-transparent border-0" %>
+            <%= button_to 'Sign out', session_path(current_client), method: :delete, class: "nav-link bg-transparent border-0" %>
           </li>
           <li class="nav-item p-3">
-            <%= current_user.name %>
+            <%= current_client.name %>
           </li>
         <% else %>
           <% if request.path == '/sessions/new' %>
             <li class="nav-item p-3">
-              <%= link_to 'Sign up', new_user_path, class: "nav-link" %>
+              <%= link_to 'Sign up', new_client_path, class: "nav-link" %>
             </li>
           <% else %>
             <li class="nav-item p-3">
