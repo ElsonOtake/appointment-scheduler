@@ -24,6 +24,8 @@
 
 # 📖 Appointment Scheduler <a name="about-project"></a>
 
+[Take-home source](https://github.com/ChrisDrit/appointment-scheduler)
+
 This was a take-home interview project for a company. It was **timboxed to 4 hours**.
 
 **Ask:**
