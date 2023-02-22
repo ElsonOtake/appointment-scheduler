@@ -12,3 +12,9 @@ services:
     image: postgres:14-alpine
     environment:
       POSTGRES_PASSWORD: admin
+    volumes:
+      - appointment-data:/var/lib/postgresql/data
+volumes:
+  appointment-data:
+    driver: local
+    
