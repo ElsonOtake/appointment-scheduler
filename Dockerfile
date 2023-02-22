@@ -1,5 +1,9 @@
-FROM ruby:3.1.3
-RUN apt-get update && apt-get install -y nodejs
+FROM ruby:3.1.3-alpine
+RUN apk add \
+  build-base \
+  postgresql-dev \
+  tzdata \
+  nodejs
 WORKDIR /app
 COPY Gemfile* .
 RUN bundle install
