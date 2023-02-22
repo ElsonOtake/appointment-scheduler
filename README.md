@@ -14,6 +14,7 @@
   - [Install](#install)
   - [Usage](#usage)
   - [Run tests](#run-tests)
+  - [Docker](#docker)
 - [👥 Author](#author)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
@@ -63,6 +64,7 @@ This was a take-home interview project for a company. It was **timboxed to 4 hou
   <summary>Server</summary>
   <ul>
     <li><a href="https://github.com/rspec/rspec-rails">RSpec Rails</a></li>
+    <li><a href="https://docs.docker.com/get-docker/">Docker</a></li>
   </ul>
 </details>
 
@@ -87,13 +89,13 @@ This was a take-home interview project for a company. It was **timboxed to 4 hou
 
 To get a local copy up and running, follow these steps.
 
-### Prerequisites
+### Prerequisites <a name="prerequisites"></a>
 
 In order to run this project you need:
 
 [Ruby](https://www.ruby-lang.org/en/)
 
-### Setup
+### Setup <a name="setup"></a>
 
 Clone this repository to your desired folder:
 
@@ -115,7 +117,7 @@ using GitHub CLI:
   cd appointment-scheduler
 ```
 
-### Install
+### Install <a name="install"></a>
 
 Install this project with:
 ```sh
@@ -123,7 +125,7 @@ Install this project with:
   rails db:create db:migrate db:seed
 ```
 
-### Usage
+### Usage <a name="usage"></a>
 
 To run the project, execute the following command:
 
@@ -132,13 +134,35 @@ To run the project, execute the following command:
 ```
 Open `http://localhost:3000/` on your browser.
 
-### Run tests
+### Run tests <a name="run-tests"></a>
 
 To run tests, run the following command:
 
 ```sh
   rspec
 ```
+
+### Docker <a name="docker"></a>
+
+[Docker](https://docs.docker.com/get-docker/) must be installed and running on your local machine.
+
+To build the Docker image, run the following command:
+
+```sh
+docker build -t rubyapp .
+```
+
+To run the created docker image, run the following command:
+
+```sh
+docker-compose up
+```
+In another terminal run the following command:
+
+```sh
+docker-compose run app rails db:create db:migrate db:seed
+```
+Open `http://localhost:3000/` on your browser.
 
 <!-- AUTHOR -->
 
