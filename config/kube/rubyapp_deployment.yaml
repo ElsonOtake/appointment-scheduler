@@ -1,0 +1,63 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp-deployment
+spec:
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - name: myapp
+        image: elsonotake/appointment-scheduler:1.2
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 3000
+        env:
+        - name: PORT
+          value: "3000"
+        - name: DATABASE_NAME
+          valueFrom:
+            secretKeyRef:
+              name: myapp-secret
+              key: elephant-database
+        - name: DATABASE_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: myapp-secret
+              key: elephant-username
+        - name: DATABASE_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: myapp-secret
+              key: elephant-password
+        - name: DATABASE_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: myapp-configmap
+              key: elephant-host
+        - name: DATABASE_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: myapp-configmap
+              key: elephant-port
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: myapp-service
+spec:
+  selector:
+    app: myapp
+  type: LoadBalancer
+  ports:
+  - port: 3000
+    targetPort: 3000
+    nodePort: 30001
